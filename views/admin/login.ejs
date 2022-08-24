@@ -1,0 +1,32 @@
+<% include('../layouts/header.ejs') %>
+
+<h1>Admin Login</h1>
+
+
+<% 
+if (typeof message !== 'undefined') { %>
+    <h2 style="color:rgb(243, 244, 243) ;"><%= message %></h2>
+  
+    <% }
+%>
+
+
+<div class="container">
+    <div class="col-md-12">
+        <form action="" method="POST">
+            <title>Email</title>
+            <input type="email" name="email" placeholder="Enter Email">
+            <br>
+            <br>
+            <title>Password</title>
+            <input type="password" name="password" placeholder="Enter Password">
+            <br>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+
+    </div>
+
+    <a href="/admin/forget">Forget Password</a>
+
+<% include('../layouts/footer.ejs') %>

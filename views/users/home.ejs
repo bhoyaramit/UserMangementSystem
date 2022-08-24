@@ -1,0 +1,45 @@
+<% include('../layouts/header.ejs') %>
+
+
+<a href="/user/logout">Logout</a>
+
+<h1>Hii UserS</h1>
+<a href="/user/edit?id=<%= user._id %>">Edit</a>
+
+
+<table class="table table-border">
+    <tr>
+        <td>Name:-<%= user.name %></td>
+    </tr>
+    <tr>
+        <td>Email:-<%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile:-<%= user.mobile %></td>
+    </tr>
+    <br>
+    <tr>
+        <td>Image:-</td>
+        <td><img src="user_Images/<%= user.image %>" width="100" height="80" alt="<%= user.image %>" ></td>
+    </tr>
+
+    <tr>
+        <td>Verified : -</td>
+        <td>
+            <%
+            if(user.is_varified === 1)
+            {
+                %>
+                <p>Verified Email</p>
+                <%
+
+            }
+            
+            %>
+        </td>
+    </tr>
+</table>
+
+
+<% include('../layouts/footer.ejs') %>
+

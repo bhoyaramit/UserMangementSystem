@@ -1,0 +1,45 @@
+
+
+
+<h1 class="text-center">welcome <%= admin.name%></h1>
+
+<a href="/admin/dashboard">Dashboard</a>
+<br>
+<!-- <a href="/admin/edit?id=<%= admin._id %>">Edit</a> -->
+
+
+
+
+<table class="table table-border">
+    <tr>
+        <td>Name:-<%= admin.name %></td>
+    </tr>
+    <tr>
+        <td>Email:-<%= admin.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile:-<%= admin.mobile %></td>
+    </tr>
+    <br>
+    <tr>
+        <td>Image:-</td>
+        <td><img src="/user_Images/<%= admin.image %>" width="100" height="80" alt="<%= admin.image %>" ></td>
+    </tr>
+
+    <tr>
+        <td>Verified : -</td>
+        <td>
+            <%
+            if(admin.is_admin === 1)
+            {
+                %>
+                <p>Verified Email</p>
+                <%
+
+            }
+            
+            %>
+        </td>
+    </tr>
+</table>
+

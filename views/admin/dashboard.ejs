@@ -1,0 +1,82 @@
+<% include('../layouts/header.ejs') %>
+
+<h1>Dasboard</h1>
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+
+
+<!-- <p><%= users %></p> -->
+
+<table class="table table-board" width="50%">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Image</th>
+        <th>Verified</th>
+    </tr>
+<%     
+    if(users.length > 0){
+
+    for(let i=0;i<users.length;i++){
+%>
+
+<tr>
+    <td><%= users[i].name  %></td>
+    <td><%= users[i].email  %></td>
+    <td><%= users[i].mobile  %></td>
+    <td><img src="/user_Images/<%= users[i].image  %>" width="80" height="50" alt="<%= users[i].image  %>"></td>
+    <td>
+        <%
+        
+        if(users[i].is_varified == 0)
+        {
+            %>
+            <p>Not Varified</p>
+        <%
+        }
+        else{
+            %>
+            <p> Varified</p>
+
+            <%
+        }
+        
+        %>
+    </td>
+
+   
+    <!-- <td><%= users[i].is_varified  %></td> -->
+
+</tr>
+<%
+}
+  }
+    else
+    {
+        %>
+
+
+        <tr>
+            <td colspan="5">Users Not Found</td>
+        </tr>
+        <%
+    }
+    
+    %>
+</table>
+
+
+
+
+
+
+
+
+<a href="/admin/home">Go to Home</a>
+
+
+<% include('../layouts/footer.ejs') %>

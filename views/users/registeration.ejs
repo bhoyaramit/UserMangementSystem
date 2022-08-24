@@ -1,0 +1,39 @@
+<% include('../layouts/header.ejs') %>
+
+<h1>Hii</h1>
+
+
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="text" name="name" placeholder="Enter Name">
+<br>
+<br>
+
+<input type="email" name="email" placeholder="Enter Email">
+<br>
+<br>
+
+<input type="text" name="mobile" placeholder="Enter Mobile">
+<br>
+<br>
+
+<input type="file" name="image" placeholder="Enter Image">
+<br>
+<br>
+
+<input type="password" name="password" placeholder="Enter Password">
+<br>
+<br>
+
+<input type="submit" value="Register">
+
+<% 
+if (typeof message !== 'undefined') { %>
+    <h2 style="color:green ;"><%= message %></h2>
+  
+    <% }
+%>
+</form>
+<% include('../layouts/footer.ejs') %>
+

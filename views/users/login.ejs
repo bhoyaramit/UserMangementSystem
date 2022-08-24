@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Login Panel</h1>
+
+
+    <% 
+    if (typeof message !== 'undefined') { %>
+        <h2 style="color:green ;"><%= message %></h2>
+      
+        <% }
+    %>
+
+<section>
+
+<div class="container">
+    <div class="col-md-12">
+        <form action="/user/login" method="post">
+            <title>Email</title>
+            <input type="email" name="email" placeholder="Enter Email">
+            <br>
+            <br>
+            <title>Password</title>
+            <input type="password" name="password" placeholder="Enter Password">
+            <br>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+
+    </div>
+
+</div>
+<a href="/user/forget">Forget Password</a>
+<br>
+<br>
+<a href="/user/verification">Sent verification</a>
+
+</section>
+</body>
+</html>
